@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
@@ -23,6 +25,7 @@ public class Posts {
     private String content;
 
     private String author;
+    private LocalDateTime modifiedDate;
 
     @Builder
     public Posts(String title, String content, String author){
@@ -34,5 +37,13 @@ public class Posts {
     public void update(String title, String content){
         this.title = title;
         this.content = content;
+    }
+
+    public LocalDateTime getModifiedDate() {
+        return LocalDateTime.now();
+    }
+
+    public void setModifiedDate(LocalDateTime modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 }
