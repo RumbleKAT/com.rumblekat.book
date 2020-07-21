@@ -1,9 +1,9 @@
 package com.rumblekat.book.springboot.web;
 
-
 import com.rumblekat.book.springboot.service.posts.PostsService;
 import com.rumblekat.book.springboot.web.dto.PostsResponseDto;
 import com.rumblekat.book.springboot.web.dto.PostsSaveRequestDto;
+import com.rumblekat.book.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,4 +26,5 @@ public class PostsApiController {
     public PostsResponseDto findbyId(@PathVariable Long id){
         return postsService.findById(id);
     }
+
 }
