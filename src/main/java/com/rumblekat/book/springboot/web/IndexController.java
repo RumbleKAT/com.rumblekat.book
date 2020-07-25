@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.*;
 
 @RequiredArgsConstructor
 @Controller
@@ -30,12 +33,7 @@ public class IndexController {
     public String postsUpdate(@PathVariable Long id, Model model){
         PostsResponseDto dto = postsService.findById(id);
         model.addAttribute("post",dto);
-        return "posts-update";
+        return "posts-update"; //mustache 화면을 리턴하는 구조
     }
 
-    @DeleteMapping("/api/v1/posts/{id}")
-    public Long delete(@PathVariable Long id){
-        postsService.delete(id);
-        return id;
-    }
 }
