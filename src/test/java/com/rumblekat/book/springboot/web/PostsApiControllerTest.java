@@ -1,6 +1,5 @@
 package com.rumblekat.book.springboot.web;
 
-
 import com.rumblekat.book.springboot.domain.posts.Posts;
 import com.rumblekat.book.springboot.domain.posts.PostsRespository;
 import com.rumblekat.book.springboot.web.dto.PostsSaveRequestDto;
